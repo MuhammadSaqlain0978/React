@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  weather:
+    build:
+      context: ./weather
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./weather:/app
+      - /app/node_modules
+    command: npm run dev -- --host
